@@ -14,6 +14,7 @@ export default defineConfig({
     strictPort: true,
     open: true
   },
+  base: "/toolings/",
   // to make use of `TAURI_DEBUG` and other env variables
   // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
   envPrefix: ["VITE_", "TAURI_"],
@@ -24,5 +25,6 @@ export default defineConfig({
     minify: !process.env.TAURI_DEBUG ? "esbuild" : false,
     // produce sourcemaps for debug builds
     sourcemap: !!process.env.TAURI_DEBUG,
+    outDir: 'docs'
   },
 });
